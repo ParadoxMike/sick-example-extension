@@ -1,17 +1,19 @@
-//Import VS Code API module
+// Import VS Code API module
 import * as vscode from 'vscode';
+
+// import classes
 import { DeviceInformationsView } from './DeviceInformationsView';
 
-//Activation method
+// Activation method
 export function activate(context: vscode.ExtensionContext) {
 
     context.subscriptions.push(
         vscode.commands.registerCommand('sick-example-extension.openDeviceInformations', () => {
-            new DeviceInformationsView();
+            new DeviceInformationsView(context.extensionPath);
         })
     );
 
 }
 
-//Deactivation method
+// Deactivation method
 export function deactivate() {}
