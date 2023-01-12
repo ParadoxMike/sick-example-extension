@@ -64,17 +64,6 @@ export class DeviceInformationsView {
                                     <p>Download URL</p>
                                 </div>
                              </div>
-                             <div class="divice-view__compatible-firmware-entry">
-                                <div class="divice-view__compatible-firmware-entry_version">
-                                    ver. 1.5
-                                </div>
-                                <div class="divice-view__compatible-firmware-entry_date">
-                                    2.5.33
-                                </div>
-                                <div class="divice-view__compatible-firmware-entry_url">
-                                    http://example.com
-                                </div>
-                             </div>
                         </div>
                     </div>
                 </div>
