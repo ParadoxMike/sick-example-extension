@@ -14,7 +14,12 @@
             </div>
             <div class="device-view">
                 <div class="device-view__head">
-                    
+                    <div class="device-view__head-info">
+
+                    </div>
+                    <div class="device-view__head-img-container">
+
+                    </div>
                 </div>
                 <div class="device-view__compatible-firmware">
                     <div class="divice-view__compatible-firmware-tablehead">
@@ -34,6 +39,10 @@
         <script>
             function getDatabaseUri() {
                 return '${this.srcUris.database}';
+            }
+
+            function getImgBaseUri() {
+                return '${this.srcUris.imgBase}'
             }
         </script>
         <script type="text/javascript" src="${this.srcUris.jquery}"></script>

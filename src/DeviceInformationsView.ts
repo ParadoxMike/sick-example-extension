@@ -27,6 +27,7 @@ export class DeviceInformationsView {
             scripts: this.panel.webview.asWebviewUri(vscode.Uri.file(path.join(extensionRoot, 'assets', 'js', 'scripts.js'))),
             jquery: this.panel.webview.asWebviewUri(vscode.Uri.file(path.join(extensionRoot, 'assets', 'js', 'jquery.min.js'))),
             database: this.panel.webview.asWebviewUri(vscode.Uri.file(path.join(extensionRoot, 'assets', 'json', 'database.json'))),
+            imgBase: this.panel.webview.asWebviewUri(vscode.Uri.file(path.join(extensionRoot, 'assets', 'img',))),
             
         };
 
@@ -50,7 +51,12 @@ export class DeviceInformationsView {
                     </div>
                     <div class="device-view">
                         <div class="device-view__head">
-                            <p>here the device will be displayed</p>
+                            <div class="device-view__head-info">
+        
+                            </div>
+                            <div class="device-view__head-img-container">
+        
+                            </div>
                         </div>
                         <div class="device-view__compatible-firmware">
                             <div class="divice-view__compatible-firmware-tablehead">
@@ -70,6 +76,10 @@ export class DeviceInformationsView {
                 <script>
                     function getDatabaseUri() {
                         return '${this.srcUris.database}';
+                    }
+        
+                    function getImgBaseUri() {
+                        return '${this.srcUris.imgBase}'
                     }
                 </script>
                 <script type="text/javascript" src="${this.srcUris.jquery}"></script>

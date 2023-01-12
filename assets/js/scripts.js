@@ -51,14 +51,39 @@ const $deviceViewCompatibeFirmware = $('.device-view__compatible-firmware');
 
 //FUNCTIONS
 function populateDeviceView(partNumber) {
-
+    populateDeviceViewHead(partNumber);
 
     clearCompatibleFirmwareList();
     populateCompatibleFirmwareList(partNumber);
 }
 
 function populateDeviceViewHead(partNumber) {
-    
+    const device = getDevice(partNumber);
+    const imgBaseUri = getImgBaseUri();
+
+    $deviceViewHead.html(`
+        <div class="device-view__head-info">
+            <p>${device.name}</p>
+            <p>Part number: ${device.partNumber}</p>
+            <p>Communication interface: ${device.communicationInterface}</p>
+            <p>Weight: ${device.weight}</p>
+        </div>
+        <div class="device-view__head-img-container">
+            <img class="device-view__head-img" src="${imgBaseUri}/${device.id}.png" alt="picture of the sensor">
+        </div>
+    `);
+}
+
+function getDevice(partNumber) {
+    let foundDevice;
+
+    database.devices.forEach(device => {
+        if (device.partNumber == partNumber) {
+            foundDevice = device;
+        }
+    });
+
+    return foundDevice;
 }
 
 function populateCompatibleFirmwareList(partNumber) {
