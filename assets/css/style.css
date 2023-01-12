@@ -12,6 +12,10 @@
     flex-grow: 0;
 }
 
+.devices-sidebar__item {
+    
+}
+
 .device-view {
     background-color: blue;
     flex-grow: 1;

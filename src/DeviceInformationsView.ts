@@ -26,6 +26,8 @@ export class DeviceInformationsView {
             normalize: this.panel.webview.asWebviewUri(vscode.Uri.file(path.join(extensionRoot, 'assets', 'css', 'normalize.css'))),
             scripts: this.panel.webview.asWebviewUri(vscode.Uri.file(path.join(extensionRoot, 'assets', 'js', 'scripts.js'))),
             jquery: this.panel.webview.asWebviewUri(vscode.Uri.file(path.join(extensionRoot, 'assets', 'js', 'jquery.min.js'))),
+            database: this.panel.webview.asWebviewUri(vscode.Uri.file(path.join(extensionRoot, 'assets', 'json', 'database.json'))),
+            
         };
 
         this.panel.webview.html = this.generateHtml();
@@ -44,7 +46,7 @@ export class DeviceInformationsView {
             <body>
                 <div class="main-container">
                     <div class="devices-sidebar">
-                        <p>this is the sidebar</p>
+                        
                     </div>
                     <div class="device-view">
                         <div class="device-view__head">
@@ -76,9 +78,13 @@ export class DeviceInformationsView {
                         </div>
                     </div>
                 </div>
-        
-                <!-- <script type="text/javascript" src="./jquery.min.js"></script>
-                <script type="text/javascript" src="./scripts.js"></script> -->
+                <script>
+                    function getDatabaseUri() {
+                        return '${this.srcUris.database}';
+                    }
+                </script>
+                <script type="text/javascript" src="${this.srcUris.jquery}"></script>
+                <script type="text/javascript" src="${this.srcUris.scripts}"></script>
             </body>
         </html>`;
     }
