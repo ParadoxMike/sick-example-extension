@@ -1,13 +1,52 @@
 .main-container {
     width: 100%;
     height: 100%;
-    display: flexbox;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 
 .devices-sidebar {
     background-color: green;
+    overflow-y: scroll;
+    flex-grow: 0;
 }
 
 .device-view {
     background-color: blue;
+    flex-grow: 1;
+}
+
+.device-view__head {
+
+}
+
+.device-view__compatible-firmware {
+
+}
+
+.divice-view__compatible-firmware-tablehead {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.divice-view__compatible-firmware-tablehead_version,
+.divice-view__compatible-firmware-tablehead_date,
+.divice-view__compatible-firmware-tablehead_url {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.divice-view__compatible-firmware-entry {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.divice-view__compatible-firmware-entry_version,
+.divice-view__compatible-firmware-entry_date,
+.divice-view__compatible-firmware-entry_url {
+    text-align: center;
+    flex-grow: 1;
 }
