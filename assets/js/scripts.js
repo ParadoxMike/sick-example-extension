@@ -33,7 +33,7 @@ $sidebarItems.click(function(){
 //FUNCTIONS
 function populateSidebar() {
     database.devices.forEach(device => {
-        $sidebar.append('<div class="devices-sidebar__item" data-partnumber="' + device.partNumber + '">' + device.name + '</div>');      
+        $sidebar.append('<div class="devices-sidebar__item" data-partnumber="' + device.partNumber + '"><p>' + device.name + '</p></div>');      
     });
 
     $sidebarItems = $('.devices-sidebar__item');
